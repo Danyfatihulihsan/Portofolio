@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dany Fatihul Ihsan – Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3e7df;--ink:#3c4741;--mute:#66726b;--line:#cbd3c7;--acc:#6b8a84;--acc2:#8b88a6;--soft:#d9dfd5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1e2522;--ink:#c5cfc8;--mute:#8b978f;--line:#2f3934;--acc:#8fb0a8;--acc2:#a6a4c0;--soft:#263029;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1e2522;--ink:#c5cfc8;--mute:#8b978f;--line:#2f3934;--acc:#8fb0a8;--acc2:#a6a4c0;--soft:#263029;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 'Hanken Grotesk',system-ui,sans-serif}
+h1,h2,h3{font-family:Spectral,Georgia,serif;font-weight:500;margin:0;line-height:1.15}
+a{color:inherit;text-decoration-color:var(--acc);text-underline-offset:4px}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+#theme{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:18px;z-index:6;background:var(--bg);border:1px solid var(--line);color:var(--mute);border-radius:99px;padding:3px 12px;font:inherit;font-size:14px;cursor:pointer}
+#hero{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:flex-end;padding-bottom:70px;overflow:hidden}
+#bg{position:absolute;inset:0;width:100%;height:100%}
+.hero-in{position:relative;pointer-events:none}
+h1{font-size:clamp(46px,9vw,92px);letter-spacing:-.025em}
+.hero-in p{max-width:44ch;margin:20px 0 0;color:var(--mute);font-size:19px}
+/* garis waktu */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before,.tl::after{content:"";position:absolute;left:138px;top:0;width:1px}
+.tl::before{bottom:0;background:var(--line)}.tl::after{height:calc(var(--p,0)*100%);background:var(--acc);transition:height .15s}
+.e{display:grid;grid-template-columns:138px 1fr;position:relative;padding:0 0 46px}
+.e time{font-size:14.5px;color:var(--mute);padding-top:5px;padding-right:26px;text-align:right}
+.e::before{content:"";position:absolute;left:134px;top:11px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1px solid var(--mute);transition:background .4s,border-color .4s}
+.e.on::before{background:var(--acc);border-color:var(--acc)}
+.e>div{padding-left:34px;min-width:0}
+.big h3{font-size:clamp(28px,4.2vw,38px);margin-bottom:10px}
+.big p,.mid p{margin:0 0 14px;max-width:58ch}.mid h3{font-size:24px;margin-bottom:6px}
+.shot{width:100%;border-radius:6px;display:block;margin:18px 0 8px;aspect-ratio:16/9;object-fit:cover;object-position:top left;background:var(--soft)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}.pair .shot{margin:0 0 8px}.pair small{display:block;color:var(--mute);font-size:14px;line-height:1.5}
+.tags{color:var(--mute);font-size:14.5px}
+.row{display:flex;gap:14px;align-items:baseline;justify-content:space-between;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:6px 0;font:inherit;color:inherit;cursor:pointer;transition:padding .2s,color .2s}
+.row:hover,.row:focus-visible{padding-left:8px;color:var(--acc);outline:none}.row span{font-size:14px;color:var(--mute);white-space:nowrap}
+.rows{display:flex;flex-direction:column}
+#pv{position:fixed;z-index:8;width:260px;pointer-events:none;opacity:0;transition:opacity .15s;border-radius:6px;border:1px solid var(--line);background:var(--bg);padding:6px;box-shadow:0 10px 30px color-mix(in srgb,var(--ink) 18%,transparent)}
+#pv img{width:100%;display:block;border-radius:3px}
+@media(pointer:coarse){#pv{display:none}}
+/* selingan */
+h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px}
+.lead{color:var(--mute);max-width:54ch;margin:0 0 26px}
+#game{width:100%;height:auto;aspect-ratio:3.2/1;display:block;border-radius:8px;background:var(--soft);cursor:crosshair;touch-action:manipulation}
+.bar{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:12px;font-size:15px;color:var(--mute)}.bar b{color:var(--ink);font-weight:500}
+#msg{flex:1;min-width:140px;color:var(--acc)}
+.btn{background:none;border:1px solid var(--mute);color:var(--ink);border-radius:99px;padding:6px 18px;font:inherit;font-size:15px;cursor:pointer;transition:border-color .2s,color .2s}.btn:hover,.btn:focus-visible{border-color:var(--acc);color:var(--acc);outline:none}
+section{padding:60px 0 20px}
+footer{padding:70px 0 90px}footer p{max-width:50ch;color:var(--mute);margin:10px 0 18px}footer .l{display:flex;gap:22px;flex-wrap:wrap}
+#lb{border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:14px;max-width:min(92vw,820px);text-align:center}
+#lb::backdrop{background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(5px)}
+#lb img{max-width:100%;max-height:72vh;display:block;margin:0 auto 10px;border-radius:4px}#lb p{margin:0 0 10px;color:var(--mute);font-size:15px}
+@media(max-width:640px){.tl::before,.tl::after{left:6px}.e{grid-template-columns:1fr}.e time{text-align:left;padding:0 0 2px 34px}.e::before{left:2px}.e>div{padding-left:34px}.pair{grid-template-columns:1fr}.row{flex-direction:column;gap:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<button id="theme" aria-label="Ganti tema">Tema</button>
+
+<header id="hero"><canvas id="bg" aria-hidden="true"></canvas>
+<div class="wrap hero-in"><h1>Dany Fatihul Ihsan</h1>
+<p>Lulusan Sistem Informasi Gunadarma. Saya suka data yang berulang, dan mencari tahu kenapa ada hari ketika ia tidak ikut berulang.</p>
+<p>Skripsi saya tentang ketergantungan rokok. Sekarang saya mencari pekerjaan pertama sebagai data analyst.</p></div></header>
+
+<main class="wrap"><ol class="tl" id="tl">
+<li class="e"><time>Feb 2023</time><div><button class="row" data-i="9"><b>Dasar manajemen basis data</b><span>pelatihan</span></button></div></li>
+<li class="e"><time>Feb 2024</time><div><button class="row" data-i="8"><b>Oracle tingkat pemula</b><span>pelatihan</span></button></div></li>
+<li class="e"><time>Feb 2025</time><div class="rows">
+<button class="row" data-i="7"><b>Oracle tingkat menengah</b><span>pelatihan</span></button>
+<button class="row" data-i="4"><b>Introduction to Data Science with Python</b><span>DQLab</span></button>
+<button class="row" data-i="5"><b>Introduction to Data Science with R</b><span>DQLab</span></button>
+<button class="row" data-i="6"><b>Guide to Learn R with AI</b><span>DQLab</span></button></div></li>
+
+<li class="e big"><time>Sep 2025 – Jan 2026</time><div><h3>Magang di Telkomsel: kapan CPU benar-benar bermasalah?</h3>
+<p>Alarm yang berbunyi setiap kali pemakaian CPU naik itu melelahkan. Tugas saya membuat ambang batas yang ikut belajar dari pola harian, mingguan, dan bulanan, lalu memeriksa ulang setiap alarm.</p>
+<p>Saya membandingkan MSTL, ARIMA, dan Prophet untuk memahami pola, memakai EWMA untuk ambang dinamis, lalu menguji LSTM, Holt-Winters, dan SARIMA untuk memvalidasi alert. Akurasi pemantauan MSTL di lima host berada di kisaran 81–90%. Nilai akhir magang: 90.</p>
+<p>Pelajaran yang paling saya ingat: ambang saya terus menempel di 0,98 karena data saya berupa persen sedangkan data asli berupa pecahan. Banyak “model yang salah” ternyata “data yang salah”.</p>
+<img class="shot" alt="Kode Python peramalan ARIMA untuk data CPU" src="images/proyek-cpu-telkomsel.jpg"><span class="tags">Python · MSTL · EWMA · LSTM · Holt-Winters · SARIMA</span></div></li>
+
+<li class="e"><time>Sep 2025</time><div><button class="row" data-i="3"><b>Persiapan data untuk proses bisnis</b><span>pelatihan</span></button></div></li>
+<li class="e"><time>Mar 2026</time><div><button class="row" data-i="2"><b>Surat keterangan selesai magang</b><span>Telkomsel</span></button></div></li>
+<li class="e"><time>Mei – Jun 2026</time><div><button class="row" data-i="1"><b>Membuat business intelligence</b><span>pelatihan</span></button></div></li>
+
+<li class="e mid"><time>Jul 2026</time><div><h3>Sertifikat kompetensi Data Analyst</h3>
+<p>Uji kompetensi BNSP lewat LSP Universitas Gunadarma, berlaku tiga tahun.</p>
+<button class="row" data-i="0"><b>Lihat sertifikat</b><span>BNSP</span></button></div></li>
+
+<li class="e mid"><time>Di sela-sela</time><div><h3>Dua proyek yang saya bangun sendiri</h3>
+<div class="pair"><div><img class="shot" alt="Simulasi perjalanan KRL di atas peta" src="images/proyek-krl.jpg"><small><b>Simulasi KRL Bogor – Jakarta Kota.</b> Kereta bergerak di peta berdasarkan jadwal dan nomor KA dari CSV, dengan kecepatan simulasi sampai 8×.</small></div>
+<div><img class="shot" alt="Dashboard harga cabai rawit merah harian" src="images/proyek-cabai-harian.jpg"><small><b>Pantauan harga cabai harian.</b> Harga hari ini dibanding kemarin, seminggu lalu, dan rata-rata 30 hari.</small></div></div></div></li>
+
+<li class="e mid"><time>Masih berjalan</time><div><h3>Peramalan harga cabai: SARIMAX atau Prophet?</h3>
+<p>Awalnya proyek ini saya rencanakan jadi skripsi. Topiknya berganti, tetapi proyeknya tetap saya teruskan karena datanya menarik dan masih banyak yang bisa dicoba.</p>
+<p>Dua model peramalan harga cabai rawit merah di Pasar Manado dibandingkan, dengan data cuaca BMKG Stasiun Sam Ratulangi sebagai variabel tambahan. Data harian 1 Januari 2022 – 20 September 2025 (1.359 observasi), dibagi 87% latih dan 13% uji, dinilai dengan MAPE, RMSE, dan MAE.</p>
+<img class="shot" alt="Dashboard perbandingan SARIMAX dan Prophet untuk harga cabai" src="images/proyek-cabai-sarimax-prophet.jpg"><span class="tags">SARIMAX · Prophet · Streamlit · uji stasioneritas</span></div></li>
+
+<li class="e big"><time>2026</time><div><h3>Skripsi: QuitAddict, mengukur ketergantungan rokok</h3>
+<p>Skripsi saya pindah topik ke kesehatan digital, dan sudah saya pertahankan di sidang. QuitAddict adalah situs yang membantu orang mengukur tingkat ketergantungan nikotin lewat tes FTND (Fagerström, enam pertanyaan) dan kuesioner perilaku sepuluh pertanyaan, lalu memberi rencana aksi tujuh hari untuk mulai mengurangi kebiasaan merokok. Seluruh prosesnya kurang dari tiga menit.</p>
+<p><a href="https://fatihuldanyy7.pythonanywhere.com" target="_blank" rel="noopener">Buka situsnya</a>.</p>
+<img class="shot" alt="Halaman depan QuitAddict, evaluasi tingkat ketergantungan rokok" src="images/quitaddict.jpg"><span class="tags">Python · PythonAnywhere · FTND · klasifikasi</span></div></li>
+</ol>
+
+<section><h2>Selingan: temukan lonjakannya</h2>
+<p class="lead">Garis ini pemakaian CPU. Klik lonjakan sebelum lewat. Klik di tempat yang normal dihitung alarm palsu.</p>
+<canvas id="game" width="1000" height="310"></canvas>
+<div class="bar"><span>Tertangkap <b id="sc">0</b></span><span>Palsu <b id="fa">0</b></span><span>Terlewat <b id="ms">0</b></span><span><b id="tm">30</b> detik</span><span id="msg">Tekan mulai.</span><button class="btn" id="go">Mulai</button></div></section>
+
+<footer><h2>Mari ngobrol</h2><p>Terbuka untuk peran data analyst atau data scientist. Ganti tautan di bawah dengan milik Anda.</p>
+<div class="l"><a href="mailto:email@contoh.com">Email</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></div></footer></main>
+
+<div id="pv"><img alt=""></div>
+<dialog id="lb"><img alt=""><p id="lbc"></p><button class="btn" id="lbx">Tutup</button></dialog>
+
+<script>
+const CERT=["images/sertifikat-bnsp.jpg", "images/sertifikat-bi.jpg", "images/surat-magang.jpg", "images/sertifikat-persiapan-data.jpg", "images/sertifikat-dqlab-python.jpg", "images/sertifikat-dqlab-r.jpg", "images/sertifikat-dqlab-r-ai.jpg", "images/sertifikat-oracle-menengah.jpg", "images/sertifikat-oracle-pemula.jpg", "images/sertifikat-dbms.jpg"];
+const NAME=['Okupasi Data Analyst (BNSP)','Membuat Business Intelligence','Surat keterangan selesai magang','Persiapan data untuk proses bisnis','Data Science with Python','Data Science with R','Learn R with AI','Oracle tingkat menengah','Oracle tingkat pemula','Dasar manajemen basis data'];
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const $=id=>document.getElementById(id);
+$('theme').onclick=()=>{const R=document.documentElement,d=R.dataset.theme?R.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;R.dataset.theme=d?'light':'dark'};
+function fit(cv){const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);cv.width=r.width*d;cv.height=r.height*d;const x=cv.getContext('2d');x.setTransform(d,0,0,d,0,0);return{x,w:r.width,h:r.height}}
+/* hero: satu garis yang bisa dibelokkan */
+(function(){const cv=$('bg');let c=fit(cv),mx=-999,my=0,t=0;addEventListener('resize',()=>c=fit(cv));
+  $('hero').addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+  $('hero').addEventListener('pointerleave',()=>mx=-999);
+  const f=(x,k)=>Math.sin(x*.007+k+t)*22+Math.sin(x*.019+k*2-t*1.6)*8+Math.sin(x*.0023+k)*36;
+  function draw(){const{x,w,h}=c;x.clearRect(0,0,w,h);
+    [[0,.34,css('--acc'),.7,1.6],[1,.4,css('--acc2'),.3,1]].forEach(([k,y0,col,a,lw])=>{x.beginPath();x.lineWidth=lw;x.globalAlpha=a;x.strokeStyle=col;
+      for(let i=0;i<=w;i+=6){let y=h*y0+f(i,k*2);if(mx>-900){const d=i-mx;y+=(my-y)*Math.exp(-d*d/20000)*.5}i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke()});
+    x.globalAlpha=1;if(!reduce){t+=.008;requestAnimationFrame(draw)}}
+  draw()})();
+/* garis waktu: progres dan titik aktif */
+(function(){const tl=$('tl'),es=[...tl.children];
+  function p(){const r=tl.getBoundingClientRect(),y=innerHeight*.55;tl.style.setProperty('--p',Math.min(1,Math.max(0,(y-r.top)/r.height)));
+    es.forEach(e=>e.classList.toggle('on',e.getBoundingClientRect().top<y))}
+  addEventListener('scroll',p,{passive:true});addEventListener('resize',p);p()})();
+/* sertifikat: pratinjau saat hover, klik untuk memperbesar */
+(function(){const pv=$('pv'),im=pv.firstElementChild,lb=$('lb');
+  document.querySelectorAll('.row').forEach(b=>{const i=+b.dataset.i;
+    b.addEventListener('pointerenter',e=>{if(e.pointerType!=='mouse')return;im.src=CERT[i];pv.style.opacity=1});
+    b.addEventListener('pointermove',e=>{const x=Math.min(e.clientX+24,innerWidth-290),y=Math.min(Math.max(e.clientY-90,10),innerHeight-230);pv.style.left=x+'px';pv.style.top=y+'px'});
+    b.addEventListener('pointerleave',()=>pv.style.opacity=0);
+    b.onclick=()=>{pv.style.opacity=0;lb.querySelector('img').src=CERT[i];lb.querySelector('img').alt='Sertifikat '+NAME[i];$('lbc').textContent=NAME[i];lb.showModal()}});
+  $('lbx').onclick=()=>lb.close();lb.addEventListener('click',e=>{if(e.target===lb)lb.close()})})();
+/* game */
+(function(){const cv=$('game');let c=fit(cv);addEventListener('resize',()=>c=fit(cv));
+  const N=120;let run=false,S,F,M,T,data,spikes,k,acc,prev;
+  const base=i=>.5+Math.sin(i*.28)*.12+Math.sin(i*.07)*.08+(Math.random()-.5)*.04;
+  function reset(){S=F=M=0;T=30;k=0;acc=0;spikes=[];data=[];for(let i=0;i<N;i++)data.push(base(i));ui()}
+  function ui(){$('sc').textContent=S;$('fa').textContent=F;$('ms').textContent=M;$('tm').textContent=Math.max(0,Math.ceil(T))}
+  function step(){data.shift();let v=base(k++ +N);
+    if(Math.random()<.07){v=.5+(Math.random()<.5?1:-1)*(.3+Math.random()*.08);spikes.push({i:N-1,hit:false})}
+    data.push(v);spikes.forEach(s=>s.i--);spikes=spikes.filter(s=>{if(s.i<0){if(!s.hit)M++;return false}return true})}
+  function draw(){const{x,w,h}=c;x.clearRect(0,0,w,h);const px=w/(N-1),py=v=>h-v*h;
+    x.fillStyle=css('--acc2');x.globalAlpha=.14;x.fillRect(0,py(.68),w,py(.32)-py(.68));x.globalAlpha=1;
+    x.strokeStyle=css('--acc');x.lineWidth=2;x.beginPath();data.forEach((v,i)=>i?x.lineTo(i*px,py(v)):x.moveTo(0,py(v)));x.stroke();
+    spikes.forEach(s=>{const v=data[s.i];if(v===undefined)return;x.beginPath();x.arc(s.i*px,py(v),s.hit?9:5,0,7);
+      if(s.hit){x.strokeStyle=css('--acc');x.lineWidth=2;x.stroke()}else{x.fillStyle=css('--acc2');x.fill()}})}
+  function loop(ts){if(!run)return;const dt=Math.min(ts-prev,60);prev=ts;acc+=dt;T-=dt/1000;while(acc>110){acc-=110;step()}ui();draw();
+    if(T<=0){run=false;$('go').textContent='Main lagi';$('msg').textContent=S>=8?S+' lonjakan tertangkap. Cukup tajam.':'Selesai. Coba lagi, polanya makin terbaca.';draw();return}requestAnimationFrame(loop)}
+  cv.addEventListener('pointerdown',e=>{if(!run)return;const r=cv.getBoundingClientRect(),mx=(e.clientX-r.left)/r.width*c.w,my=(e.clientY-r.top)/r.height*c.h,px=c.w/(N-1);let hit=false;
+    spikes.forEach(s=>{const v=data[s.i];if(v===undefined||s.hit)return;if(Math.hypot(s.i*px-mx,c.h-v*c.h-my)<28){s.hit=true;hit=true;S++}});
+    if(!hit)F++;$('msg').textContent=hit?'Tertangkap.':'Itu pola normal.';ui()});
+  $('go').onclick=()=>{reset();run=true;prev=performance.now();$('go').textContent='Ulangi';$('msg').textContent='';requestAnimationFrame(loop)};
+  reset();draw()})();
+</script>
+</body>
+</html>
